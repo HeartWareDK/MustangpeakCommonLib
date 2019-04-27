@@ -1,3 +1,5 @@
+{$T-} // Required compiler setting for compilation
+
 unit MPShellUtilities;
 
 // Version 2.1.0
@@ -356,7 +358,7 @@ type
     csTypeString,     // A string.
     csTypeInt,        // An integer.
     csTypeDate,       // A date.
-    csOnByDefault,    // Should be shown by default in the Microsoft® Windows® Explorer Details view.
+    csOnByDefault,    // Should be shown by default in the MicrosoftÂ® WindowsÂ® Explorer Details view.
     csSlow,           // Extracting information about the column can be time consuming.
     csExtended,       // Provided by a handler, not the folder object.
     csSecondaryUI,    // Not displayed in the context menu, but listed in the More dialog box.
