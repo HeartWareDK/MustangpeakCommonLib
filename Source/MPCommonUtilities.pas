@@ -1,3 +1,5 @@
+{$T-} // Required compiler setting for compilation
+
 unit MPCommonUtilities;
 
 // Version 2.1.0
@@ -203,7 +205,7 @@ type
   end;
 
   // Hue, luminance, saturation color with all three components in the range [0..1]
-  // (so hue's 0..360° is normalized to 0..1).
+  // (so hue's 0..360Â° is normalized to 0..1).
   TCommonHLS = record
     H, L, S: Double;
   end;
@@ -2621,7 +2623,7 @@ begin
           BkGndGreen := (LongColor and $0000FF00) shr 8;
           BkGndRed := (LongColor and $00FF0000) shr 16;
 
-          // displayColor = sourceColor×alpha / 256 + backgroundColor×(256 – alpha) / 256
+          // displayColor = sourceColorÃ—alpha / 256 + backgroundColorÃ—(256 Â– alpha) / 256
           // Profiled = ~15-24% of time
           RedTarget := SourceRed*Alpha shr 8 + BkGndRed*(255-Alpha) shr 8;
           GreenTarget := SourceGreen*Alpha shr 8 + BkGndGreen*(255-Alpha) shr 8;
@@ -5107,7 +5109,7 @@ function RGBToHLS(const RGB: TCommonRGB): TCommonHLS;
 
 // Converts from RGB to HLS.
 // Input parameters and result values are all in the range 0..1.
-// Note: Hue is normalized so 360° corresponds to 1.
+// Note: Hue is normalized so 360Â° corresponds to 1.
 
 var
   Delta,
@@ -5157,7 +5159,7 @@ function HLSToRGB(const HLS: TCommonHLS): TCommonRGB;
 
 // Converts from HLS (hue, luminance, saturation) to RGB.
 // Input parameters and result values are all in the range 0..1.
-// Note: Hue is normalized so 360° corresponds to 1.
+// Note: Hue is normalized so 360Â° corresponds to 1.
 
   //--------------- local function --------------------------------------------
 
